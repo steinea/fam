@@ -1,0 +1,176 @@
+<!-- Variables -->
+{% assign personSosa = page.sosa %}
+{% assign personGender = page.gender %}
+{% assign personGiven = page.given %}
+{% assign personFirst = personGiven | split: " " %}
+
+<!-- Birth -->
+<p>
+  {{ page.given }} {{ page.surname }}
+  {% if page.maiden %} (née {{ page.maiden }}) {% endif %}
+  was born
+    {% if page.birth-date %} on {{ page.birth-date | date: "%B %e, %Y" }}{% endif %}
+    {% if page.birth-place %} in {{ page.birth-place }}{% endif %}
+
+<!-- Parents -->
+{% for page in site.pages %}
+  {% if page.category contains "genealogy" and page.subcategory contains "family" and page.child contains personSosa %}
+
+    to
+
+    <!-- Assign variables for father and number sosa numbers -->
+    {% assign fatherNumber = page.husband %}
+    {% assign motherNumber = page.wife %}
+
+    <!-- Search for page of father sosa -->
+    {% for page in site.pages %}
+      {% if page.category contains "genealogy" and page.subcategory contains "person" and page.sosa == fatherNumber %}
+        <a href="{{ page.url }}">{% if page.tags contains "direct" %}({{ page.sosa }}) {% endif %}{{ page.title }}</a>
+      {% endif %}
+    {% endfor %}
+
+    and
+
+    <!-- Search for page of mother sosa -->
+    {% for page in site.pages %}
+      {% if page.category contains "genealogy" and page.subcategory contains "person" and page.sosa == motherNumber %}
+        <a href="{{ page.url }}">{% if page.tags contains "direct" %}({{ page.sosa }}) {% endif %}{{ page.title }}.</a>
+      {% endif %}
+    {% endfor %}
+
+  {% endif %}
+{% endfor %}
+
+</p>
+
+
+<!-- Siblings -->
+{% for page in site.pages %}
+  {% if page.category contains "genealogy" and page.subcategory contains "family" and page.child contains personSosa %}
+
+    <p>{{ personFirst | first }} had
+
+      {% assign siblingCount = 0 %}
+        {% for child in page.child %}
+          {% if child != personSosa %}
+            {% assign siblingCount = siblingCount | plus: 1 %}
+          {% endif %}
+        {% endfor %}
+
+      {{ siblingCount }}
+
+      {% if siblingCount == 1 %} sibling:
+      {% else %} siblings:
+      {% endif %}
+    </p>
+
+    <ul>
+      {% for child in page.child %}
+        {% assign siblingSosa = child %}
+          {% for page in site.pages %}
+            {% if page.category contains "genealogy" and page.subcategory contains "person" and page.sosa == siblingSosa and page.sosa != personSosa %}
+              <li><a href="{{ page.url }}">{% if page.tags contains "direct" %}({{ page.sosa }}) {% endif %}{{ page.title }}</a>{% if page.birth-date %}, born {{ page.birth-date |  date: "%B %e, %Y" }}{% endif %}</li>
+            {% endif %}
+          {% endfor %}
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endfor %}
+
+
+<!-- Marriage -->
+{% for page in site.pages %}
+  {% if page.category contains "genealogy" and page.subcategory contains "family" and page.husband == personSosa or page.wife == personSosa %}
+
+  <p>
+    {{ personFirst | first }} married
+
+    {% if personGender contains "Male" %}
+      {% assign personWife = page.wife %}
+      {% for page in site.pages %}
+        {% if page.category contains "genealogy" and page.subcategory contains "person" and page.sosa == personWife %}
+          <a href="{{ page.url }}">{% if page.tags contains "direct" %}({{ page.sosa }}) {% endif %}{{ page.title }}</a>
+          {% assign spouseFirst = page.title | split: " " %}
+        {% endif %}
+      {% endfor %}
+
+    {% elsif personGender contains "Female" %}
+      {% assign personHusband = page.husband %}
+      {% for page in site.pages %}
+        {% if page.category contains "genealogy" and page.subcategory contains "person" and page.sosa == personHusband %}
+          <a href="{{ page.url }}">{% if page.tags contains "direct" %}({{ page.sosa }}) {% endif %}{{ page.title }}</a>
+          {% assign spouseFirst = page.title | split: " " %}
+        {% endif %}
+      {% endfor %}
+
+    {% endif %}
+
+    {% if page.marriage-date %}
+      on {{ page.marriage-date | date: "%B %e, %Y" }}{% if page.marriage-place == nil %}.{% endif %}
+    {% endif %}
+
+    {% if page.marriage-place %}
+      in {{ page.marriage-place }}.
+    {% endif %}
+
+    </p>
+
+  {% endif %}
+{% endfor %}
+
+
+<!-- Children -->
+{% for page in site.pages %}
+  {% if page.category contains "genealogy" and page.subcategory contains "family" and page.child and page.husband == personSosa or page.wife == personSosa %}
+
+    <p>{{ personFirst | first }} and {{ spouseFirst | first }} had
+
+      {% assign childrenCount = 0 %}
+        {% for child in page.child %}
+          {% assign childrenCount = childrenCount | plus: 1 %}
+        {% endfor %}
+
+      {{ childrenCount }}
+
+      {% if childrenCount == 1 %} child:
+      {% else %} children:
+      {% endif %}
+    </p>
+
+    <ul>
+      {% for child in page.child %}
+        {% assign childSosa = child %}
+          {% for page in site.pages %}
+            {% if page.category contains "genealogy" and page.subcategory contains "person" and page.sosa == childSosa %}
+              <li><a href="{{ page.url }}">{% if page.tags contains "direct" %}({{ page.sosa }}) {% endif %}{{ page.title }}</a>{% if page.birth-date %}, born {{ page.birth-date |  date: "%B %e, %Y" }}{% endif %}</li>
+            {% endif %}
+          {% endfor %}
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endfor %}
+
+
+<!-- Death -->
+
+<p>
+  {% if page.death-date %}
+    {{ personFirst | first }} died on {{ page.death-date | date: "%B %e, %Y" }}{% if page.death-place == nil %}.{% endif %}
+  {% endif %}
+
+  {% if page.death-place %}
+    in {{ page.death-place }}.
+  {% endif %}
+</p>
+
+<!-- Burial -->
+<p>
+  {% if page.burial-date and page.burial-place %}
+    {{ personFirst | first }} was buried on {{ page.burial-date | date: "%B %e, %Y" }} in {{ page.burial-place }}.
+
+  {% elsif page.burial-place and page.burial-date == nil %}
+    {{ personFirst | first }} was buried in {{ page.burial-place }}.
+  {% endif %}
+</p>
+
+<br>

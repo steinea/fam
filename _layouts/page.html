@@ -1,0 +1,13 @@
+---
+layout: default
+---
+
+<article class="h-entry"><div class="post">
+
+  {% if page.category contains "genealogy" %}
+    {% include genealogy-layout.html %}
+  {% endif %}
+
+  {{ content }}
+
+</div></article>
