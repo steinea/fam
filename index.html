@@ -1,0 +1,54 @@
+---
+layout: default
+title: FAM
+permalink: /
+---
+
+<h2>Ahnentafel</h2>
+
+<p>An ahnentafel or ancestor table is a simple tree organized by generation, using Sosa numbering to index each individual’s relationship to the root. An ahnentafel is an ascending genealogical numbering system, meaning that it starts in the present, working its way up through the table of ancestors as far as records will reach. An ahnentafel is accommodating of gaps, since the placement in the tree of each direct ancestor can be mathematically calculated, regardless of the availability of knowledge about them. This structure also has the benefit of assigning a unique index to each direct ancestor. However, an ahnentafel is not built to accommodate indirect relations, for which the d’Aboville system is better suited.</p>
+
+<p>The ahnentafel recorded on this site reaches back as far as the sixteenth generation to some of the root’s thirteenth great-grandparents, who lived in the late 1300s to early 1400s. However, little is known of these ancestors, with the majority of family documentation beginning with the seventh generation, the root’s fourth great-grandparents, who lived in the early-to-mid 1800s.</p>
+
+<br>
+
+
+{% assign sorted = site.pages | sort: "index" %}
+{% for item in sorted %}
+  {% if item.category contains "genealogy" and item.subcategory contains "generation" %}
+    <h4>{{ item.title }}</h4>
+    <p>
+    {{ item.subtitle }}
+
+    {% assign generationCount = 0 %}
+      {% for descendant in item.descendants %}
+        {% assign generationCount = generationCount | plus: 1 %}
+      {% endfor %}
+
+    {% if generationCount == item.size %}
+      <em>({{ generationCount }} ancestors)</em>
+    {% else %}
+      <em>({{ generationCount }} of {{ item.size}} ancestors known)</em>
+    {% endif %}
+
+    <ul>
+    {% for descendant in item.descendants %}
+      {% assign descendantSosa = descendant %}
+      {% for page in site.pages %}
+        {% if page.category contains "genealogy" and page.subcategory contains "person" and page.sosa == descendantSosa %}
+          <li>
+            <a href="{{ page.url }}">({{ page.sosa }}) {{ page.title }}</a>
+            <br>{{ page.birth-date }} / {{ page.death-date }}
+          </li>
+          <br>
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+    </ul>
+
+    </p>
+
+    <br>
+
+  {% endif %}
+{% endfor %}

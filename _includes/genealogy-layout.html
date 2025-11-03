@@ -44,6 +44,19 @@
 </p>
 
 
+<!-- Baptism -->
+
+<p>
+  {% if page.baptism-date %}
+    {{ personFirst | first }} was baptized on {{ page.baptism-date | date: "%B %e, %Y" }}{% if page.baptism-place == nil %}.{% endif %}
+  {% endif %}
+
+  {% if page.baptism-place %}
+    in {{ page.baptism-place }}.
+  {% endif %}
+</p>
+
+
 <!-- Siblings -->
 {% for page in site.pages %}
   {% if page.category contains "genealogy" and page.subcategory contains "family" and page.child contains personSosa %}
@@ -79,54 +92,47 @@
 
 
 <!-- Marriage -->
-{% for page in site.pages %}
-  {% if page.category contains "genealogy" and page.subcategory contains "family" and page.husband == personSosa or page.wife == personSosa %}
+{% assign sorted = site.pages | sort: 'marriage-date' %}
+  {% for item in sorted %}
 
-  <p>
-    {{ personFirst | first }} married
+    {% if item.category contains "genealogy" and item.subcategory contains "family" and item.husband == personSosa or item.wife == personSosa %}
 
-    {% if personGender contains "Male" %}
-      {% assign personWife = page.wife %}
-      {% for page in site.pages %}
-        {% if page.category contains "genealogy" and page.subcategory contains "person" and page.sosa == personWife %}
-          <a href="{{ page.url }}">{% if page.tags contains "direct" %}({{ page.sosa }}) {% endif %}{{ page.title }}</a>
-          {% assign spouseFirst = page.title | split: " " %}
-        {% endif %}
-      {% endfor %}
+    <p>
+      {{ personFirst | first }} married
 
-    {% elsif personGender contains "Female" %}
-      {% assign personHusband = page.husband %}
-      {% for page in site.pages %}
-        {% if page.category contains "genealogy" and page.subcategory contains "person" and page.sosa == personHusband %}
-          <a href="{{ page.url }}">{% if page.tags contains "direct" %}({{ page.sosa }}) {% endif %}{{ page.title }}</a>
-          {% assign spouseFirst = page.title | split: " " %}
-        {% endif %}
-      {% endfor %}
+      {% if personGender contains "Male" %}
+        {% assign personWife = item.wife %}
+        {% for page in site.pages %}
+          {% if page.category contains "genealogy" and page.subcategory contains "person" and page.sosa == personWife %}
+            <a href="{{ page.url }}">{% if page.tags contains "direct" %}({{ page.sosa }}) {% endif %}{{ page.title }}</a>
+            {% assign spouseFirst = page.title | split: " " %}
+          {% endif %}
+        {% endfor %}
 
-    {% endif %}
+      {% elsif personGender contains "Female" %}
+        {% assign personHusband = item.husband %}
+        {% for page in site.pages %}
+          {% if page.category contains "genealogy" and page.subcategory contains "person" and page.sosa == personHusband %}
+            <a href="{{ page.url }}">{% if page.tags contains "direct" %}({{ page.sosa }}) {% endif %}{{ page.title }}</a>
+            {% assign spouseFirst = page.title | split: " " %}
+          {% endif %}
+        {% endfor %}
 
-    {% if page.marriage-date %}
-      on {{ page.marriage-date | date: "%B %e, %Y" }}{% if page.marriage-place == nil %}.{% endif %}
-    {% endif %}
+      {% endif %}
 
-    {% if page.marriage-place %}
-      in {{ page.marriage-place }}.
-    {% endif %}
+      {% if item.marriage-date %}
+        on {{ item.marriage-date | date: "%B %e, %Y" }}{% if item.marriage-place == nil %}.{% endif %}
+      {% endif %}
 
+      {% if item.marriage-place %}
+        in {{ item.marriage-place }}.
+      {% endif %}
     </p>
-
-  {% endif %}
-{% endfor %}
-
-
-<!-- Children -->
-{% for page in site.pages %}
-  {% if page.category contains "genealogy" and page.subcategory contains "family" and page.child and page.husband == personSosa or page.wife == personSosa %}
 
     <p>{{ personFirst | first }} and {{ spouseFirst | first }} had
 
       {% assign childrenCount = 0 %}
-        {% for child in page.child %}
+        {% for child in item.child %}
           {% assign childrenCount = childrenCount | plus: 1 %}
         {% endfor %}
 
@@ -138,7 +144,7 @@
     </p>
 
     <ul>
-      {% for child in page.child %}
+      {% for child in item.child %}
         {% assign childSosa = child %}
           {% for page in site.pages %}
             {% if page.category contains "genealogy" and page.subcategory contains "person" and page.sosa == childSosa %}
@@ -147,6 +153,16 @@
           {% endfor %}
       {% endfor %}
     </ul>
+
+    {% endif %}
+  {% endfor %}
+
+
+<!-- Children -->
+{% for page in site.pages %}
+  {% if page.category contains "genealogy" and page.subcategory contains "family" and page.child and page.husband == personSosa or page.wife == personSosa %}
+
+
   {% endif %}
 {% endfor %}
 
