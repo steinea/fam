@@ -4,7 +4,19 @@ title: FAM
 permalink: /
 ---
 
-<h2>Ahnentafel</h2>
+<h2>Navigation</h2>
+
+<ul>
+  <li><a href="/#ahnentafel">Ahnentafel</a></li>
+  <li><a href="/#daboville">D'Aboville</a></li>
+  <li><a href="/#register">Register</a></li>
+  <li><a href="/#research">Research</a></li>
+</ul>
+
+<br>
+
+
+<h2 id="ahnentafel">Ahnentafel</h2>
 
 <p>An ahnentafel or ancestor table is a simple tree organized by generation, using Sosa numbering to index each individual’s relationship to the root. An ahnentafel is an ascending genealogical numbering system, meaning that it starts in the present, working its way up through the table of ancestors as far as records will reach. An ahnentafel is accommodating of gaps, since the placement in the tree of each direct ancestor can be mathematically calculated, regardless of the availability of knowledge about them. This structure also has the benefit of assigning a unique index to each direct ancestor. However, an ahnentafel is not built to accommodate indirect relations, for which the d’Aboville system is better suited.</p>
 
@@ -53,8 +65,10 @@ permalink: /
   {% endif %}
 {% endfor %}
 
+<br>
 
-<h2>D'Aboville</h2>
+
+<h2 id="daboville">D'Aboville</h2>
 
 <p>The d’Aboville system is a descending genealogical numbering system, as opposed to the ascending Sosa system, that traces family lines from a fixed ancestral point. Though less flexible than Sosa numbering, the d’Aboville system allows for the recording of all ancestors in a family, not just those in a direct line to a contemporary root. This is useful for going wide in a family’s history, whereas an ahnentafel is especially fit for going deep. The d’Aboville system is preferable to the similar Henry system for its legibility, and for the ease with which it handles families with ten or more children.</p>
 
@@ -93,7 +107,7 @@ permalink: /
 <br>
 
 
-<h2>Register</h2>
+<h2 id="register">Register</h2>
 
 <p>A surnames registry is an index of names intended to collect all ancestors with a given surname in a straightforward, unified view, allowing for the tracing of direct lineages by said names. A surnames registry also has the benefit of making visible less prominent names in the ancestor table, surfacing those individuals that might otherwise go unnoticed. More generally, a surnames registry provides an opportunity for exploring the cultural and historical context of a given family name, which can help situate a specific root in their broader genealogical context.</p>
 
@@ -115,7 +129,7 @@ permalink: /
 <br>
 
 
-<h2>Research</h2>
+<h2 id="research">Research</h2>
 
 <ul>
   {% for page in site.pages %}
