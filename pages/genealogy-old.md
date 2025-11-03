@@ -41,8 +41,6 @@ title: Genealogy Old
 * (45) Carmela Bugeja
 * (46) Jean Louis Camoin
 * (47) Emanuella Spiteri
-* [(58) Thomas James Bowland](/58-thomas-james-bowland/)
-* [(59) Catherine Anderson](/59-catherine-anderson/)
 * (60) Isaac Lougheed
 * (61) Mary A. Morrison
 * (62) John Spanhouse
@@ -64,26 +62,6 @@ title: Genealogy Old
 * (93) Susanna Olimpia Bonnefoy
 * (94) Salvatore Spiteri
 * (95) Marguerita Cassar
-* [(96) John Kirkham](/96-john-kirkham/)
-* [(97) Ann Kinsey](/97-ann-kinsey/)
-* [(98) Unknown Wherton](/98-unknown-wherton/)
-* [(99) Unknown Spouse](/99-unknown-spouse/)
-* [(104) James Holland](/104-james-holland/)
-* [(105) Mary Mills](/105-mary-mills/)
-* [(106) Unknown Edmonds](/106-unknown-edmonds/)
-* [(107) Unknown Spouse](/107-unknown-spouse/)
-* [(108) Thomas Baker](/108-thomas-baker/)
-* [(109) Mary Ann Whitehouse](/109-mary-ann-whitehouse/)
-* [(110) James Hall](/110-james-hall/)
-* [(111) Sarah Pickin](/111-sarah-pickin/)
-* [(112) Henry Fitzpatrick](/112-henry-fitzpatrick/)
-* [(113) Ann Molloy](/113-ann-molloy/)
-* [(114) William Fitzgibbons](/114-william-fitzgibbons/)
-* [(115) Anastasia Foran](/115-anastasia-foran/)
-* [(116) Joseph Bowland](/116-joseph-bowland/)
-* [(117) Unknown Spouse](/117-unknown-spouse/)
-* [(118) Thompson Anderson](/118-thompson-anderson/)
-* [(119) Mary Anderson](/119-mary-anderson/)
 * (120) James Lougheed
 * (124) Frederic Spanhouse
 * (126) Pierre Valliere
@@ -102,32 +80,6 @@ title: Genealogy Old
 * (185) Marie Beaudoin
 * (186) Jacques Bonnefoy
 * (187) Marie Catherine Feraud
-* [(192) John Kirkham](/192-john-kirkham/)
-* [(193) Sarah Hawkes](/193-sarah-hawkes/)
-* [(194) Unknown Kinsey](/194-unknown-kinsey/)
-* [(195) Unknown Spouse](/195-unknown-spouse/)
-* [(208) John Holland](/208-john-holland/)
-* [(209) Sarah Talbot](/209-sarah-talbot/)
-* [(210) Unknown Mills](/210-unknown-mills/)
-* [(211) Unknown Spouse](/211-unknown-spouse/)
-* [(216) Unknown Baker](/216-unknown-baker/)
-* [(217) Unknown Spouse](/217-unknown-spouse/)
-* [(218) Unknown Whitehouse](/218-unknown-whitehouse/)
-* [(219) Unknown Spouse](/219-unknown-spouse/)
-* [(220) Unknown Hall](/220-unknown-hall/)
-* [(221) Unknown Spouse](/221-unknown-spouse/)
-* [(222) Unknown Pickin](/222-unknown-pickin/)
-* [(223) Unknown Spouse](/223-unknown-spouse/)
-* [(224) Unknown Fitzpatrick](/224-unknown-fitzpatrick/)
-* [(225) Unknown Spouse](/225-unknown-spouse/)
-* [(226) Unknown Molloy](/226-unknown-molloy/)
-* [(227) Unknown Spouse](/227-unknown-spouse/)
-* [(232) Unknown Bowland](/232-unknown-bowland/)
-* [(233) Unknown Spouse](/233-unknown-spouse/)
-* [(236) Unknown Anderson](/236-unknown-anderson/)
-* [(237) Unknown Spouse](/237-unknown-spouse/)
-* [(238) Unknown Parent](/238-unknown-parent/)
-* [(239) Unknown Parent](/239-unknown-parent/)
 * (248) Johann Spannaus
 * (252) Jean Baptiste Marie Valliere
 
@@ -148,12 +100,6 @@ title: Genealogy Old
 * (371) Therese Caillol
 * (372) Etienne Bonnefoy
 * (374) Barthelemi Feraud
-* [(384) Unknown Kirkham](/384-unknown-kirkham/)
-* [(385) Unknown Spouse](/385-unknown-spouse/)
-* [(386) Unknown Hawkes](/386-unknown-hawkes/)
-* [(387) Unknown Spouse](/387-unknown-spouse/)
-* [(416) Unknown Holland](/416-unknown-holland/)
-* [(417) Unknown Spouse](/417-unknown-spouse/)
 * (504) Jean Baptiste Valliere
 
 <br>
@@ -235,88 +181,3 @@ title: Genealogy Old
 
 * (47104) Jean Amonin Le Vieux Camoin
 * (47105) Jeanne Cortier
-
-<br>
-
-## D'Aboville
-
-The d’Aboville system is a descending [genealogical numbering system](/genealogical-numbering-system/), as opposed to the ascending Sosa system, that traces family lines from a fixed ancestral point. Though less flexible than Sosa numbering, the d’Aboville system allows for the recording of all ancestors in a family, not just those in a direct line to a contemporary root. This is useful for going wide in a family’s history, whereas an ahnentafel is especially fit for going deep. The d’Aboville system is preferable to the similar Henry system for its legibility, and for the ease with which it handles families with ten or more children.
-
-The d’Aboville groupings recorded on this site are structured around the root’s [seize quartiers](/seize-quartiers/), or sixteen great-great-grandparents, and their ancestors of the same family line. While traditionally used as a proof of nobility, these quartiers consist of farmers, and miners, and servants, and administrators, with no [quarters of nobility](/quarters-of-nobility/) to be found.
-
-<br>
-
-#### Paternal Quarters
-
-1. [Stein](/stein/)
-2. ???
-3. [Schevardo](/schevardo/)
-4. [Muss](/muss/)
-5. [Ward](/ward/)
-6. [Alderson](/alderson/)
-7. [Mifsud](/mifsud/)
-8. [Camoin](/camoin/)
-
-<br>
-
-#### Maternal Quarters
-
-9. [Kirkham](/kirkham/)
-10. [Stevens](/stevens/)
-11. [Holland](/holland/)
-12. [Baker](/baker/)
-13. [Fitzpatrick](/fitzpatrick/)
-14. [Bowland](/bowland/)
-15. [Lougheed](/lougheed/)
-16. [Spanhouse](/spanhouse/)
-
-<br>
-
-## Register
-
-A surnames registry is an index of names intended to collect all ancestors with a given [surname](/surname/) in a straightforward, unified view, allowing for the tracing of direct lineages by said names. A surnames registry also has the benefit of making visible less prominent names in the ancestor table, surfacing those individuals that might otherwise go unnoticed. More generally, a surnames registry provides an opportunity for exploring the cultural and historical context of a given family name, which can help situate a specific root in their broader genealogical context.
-
-The surnames registry on this site allows for research that goes beyond the familial record, making connections and providing context where gaps in the genealogy appear.
-
-<br>
-
-#### Surnames
-
-* [Alderson](/alderson/)
-* [Anderson](/anderson/)
-* [Baker](/baker/)
-* [Bashforth](/bashforth/)
-* [Bowland](/bowland/)
-* [Bugeja](/bugeja/)
-* [Camoin](/camoin/)
-* [Edmonds](/edmonds/)
-* [Fitzgibbons](/fitzgibbons/)
-* [Fitzpatrick](/fitzpatrick/)
-* [Hall](/hall/)
-* [Hayes](/hayes/)
-* [Holland](/holland/)
-* [Kirkham](/kirkham/)
-* [Lougheed](/lougheed/)
-* [Mifsud](/mifsud/)
-* [Morrison](/morrison/)
-* [Muss](/muss/)
-* [Niesen](/niesen/)
-* [Schevardo](/schevardo/)
-* [Spanhouse](/spanhouse/)
-* [Spiteri](/spiteri/)
-* [Stein](/stein/)
-* [Stevens](/stevens/)
-* [Valliere](/valliere/)
-* [Ward](/ward/)
-* [Wherton](/wherton/)
-
-<br>
-
-## Research
-
-[Fitzpatrick Introductory Note](/fitzpatrick-introductory-note/)
-<br>[Irish Canadians](/irish-canadians/)
-<br>[Irish Immigration to Canada, Part One](/irish-immigration-to-canada-part-one/)
-<br>[Irish Immigration to Canada, Part Two](/irish-immigration-to-canada-part-two/)
-<br>[Kirkham Introductory Note](/kirkham-introductory-note/)
-<br>[Orangemen in Canada](/orangemen-in-canada/)

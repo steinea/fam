@@ -1,0 +1,12 @@
+<!-- Surname Pages -->
+{% if page.subcategory contains "surname" %}
+  {% assign surnameSearch = page.title %}
+
+  <ul>
+    {% for page in site.pages %}
+      {% if page.category contains "genealogy" and page.subcategory contains "person" and page.surname == surnameSearch %}
+        <li><a href="{{ page.url }}">{{ page.birth-date }} {{ page.title }}</a></li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+{% endif %}

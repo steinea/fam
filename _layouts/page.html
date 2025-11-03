@@ -4,8 +4,12 @@ layout: default
 
 <article class="h-entry"><div class="post">
 
-  {% if page.category contains "genealogy" %}
+  {% if page.category contains "genealogy" and page.subcategory contains "person" %}
     {% include genealogy-layout.html %}
+  {% endif %}
+
+  {% if page.category contains "genealogy" and page.subcategory contains "surname" %}
+    {% include surname-layout.html %}
   {% endif %}
 
   {{ content }}
